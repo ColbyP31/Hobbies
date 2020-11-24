@@ -1,0 +1,32 @@
+<div class="Content_Box">
+    <a href="/Dashboard">Home</a>
+    <a href="/LogOut">Log Out</a>
+</div>
+<div class="Header">
+    <h1>Hobbies</h1>
+</div>
+<div class="Header">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Name</th>
+                        <th>Enthusiasts</th>
+                    </tr>
+                    @foreach (var hobby in ViewBag.Hobbies)
+                    {
+                        <tr>
+                            <td><a href="Hobby/@hobby.HobbyId">@hobby.HobbyName</a></td>
+                            <td>@hobby.Hobbists.Count</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="Footer">
+    <a href="/Create">Create a Hobby</a>
+</div>

@@ -1,0 +1,41 @@
+@model Interest
+
+<div class="Content_Box">
+    <a href="/Dashboard">Home</a>
+    <a href="/LogOut">Log Out</a>
+</div>
+<div class="Header">
+    <h1>@ViewBag.hobby.HobbyName</h1>
+</div>
+<div class="Header">
+    <div class="Left_Box">
+        Description: <p> @ViewBag.hobby.HobbyDescription</p>
+    </div>
+</div>
+<div class="Content_Box">
+    <div class="Left_Box">
+        <p class="MakeRoom">@ViewBag.hobby.HobbyName Enthusiasts:</p>
+        <div class="col-12">
+            <table class="table table-striped">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                @foreach (Interest p in ViewBag.hobby.Hobbists)
+                {
+                    <tr>
+                        <td>@p.User.FirstName</td>
+                        <td>@p.User.LastName</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="Right_Box">
+        <p class="MakeRoom">Become an Enthusiast!</p>
+        <form action="AddHobby" method="POST">
+            <input type="hidden" name="HobbyId" value="@ViewBag.hobby.HobbyId">
+            <input type="submit" value="Add to Hobbies">
+        </form>
+    </div>
+</div>

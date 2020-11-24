@@ -1,0 +1,24 @@
+@model Hobby
+
+<div class="Content_Box">
+    <a href="/">Home</a>
+    <a href="/LogOut">Log Out</a>
+</div>
+<div class="Header">
+    <h1>Create a Hobby</h1>
+</div>
+
+<div class="Header">
+    <form asp-action="CreateHobby" asp-controller="Home" method="POST">
+
+    <label asp-for="HobbyName"></label>
+    <span asp-validation-for="HobbyName"></span><br>
+    <input asp-for="HobbyName"><br><br>
+
+    <label asp-for="HobbyDescription"></label>
+    <span asp-validation-for="HobbyDescription"></span><br>
+    <input asp-for="HobbyDescription"><br><br>
+
+    <input type="submit" value="Create Hobby">
+    </form>
+</div>
